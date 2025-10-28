@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env FORCE_COLOR=1 next dev --turbo",
+    "dev": "cross-env FORCE_COLOR=1 NODE_OPTIONS='--dns-result-order=ipv4first' next dev --turbo --hostname localhost",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
