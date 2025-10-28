@@ -1,4 +1,4 @@
-import { Heart, Users, Sparkles } from 'lucide-react'
+import { Heart, Sparkles, Users } from 'lucide-react'
 
 const services = [
 	{

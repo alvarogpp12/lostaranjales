@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 const navItems = [
 	{ label: 'Inicio', href: '#inicio' },
