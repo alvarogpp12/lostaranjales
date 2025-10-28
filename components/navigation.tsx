@@ -66,7 +66,7 @@ export function Navigation() {
 								<Link
 									key={item.href}
 									href={item.href}
-									className="text-sm font-medium uppercase tracking-wide text-gray-700 transition-colors hover:text-emerald-700"
+									className="text-sm font-medium uppercase tracking-wide text-gray-700 transition-colors hover:text-gray-900"
 								>
 									{item.label}
 								</Link>

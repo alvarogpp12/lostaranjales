@@ -56,7 +56,7 @@ export function Footer() {
 								href="https://instagram.com"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="rounded-full bg-gray-800 p-2 hover:bg-emerald-700"
+								className="rounded-full bg-gray-800 p-2 hover:bg-gray-700"
 								aria-label="Instagram"
 							>
 								<Instagram className="size-5" />
@@ -65,14 +65,14 @@ export function Footer() {
 								href="https://facebook.com"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="rounded-full bg-gray-800 p-2 hover:bg-emerald-700"
+								className="rounded-full bg-gray-800 p-2 hover:bg-gray-700"
 								aria-label="Facebook"
 							>
 								<Facebook className="size-5" />
 							</a>
 							<a
 								href="mailto:info@lostaranjales.com"
-								className="rounded-full bg-gray-800 p-2 hover:bg-emerald-700"
+								className="rounded-full bg-gray-800 p-2 hover:bg-gray-700"
 								aria-label="Email"
 							>
 								<Mail className="size-5" />

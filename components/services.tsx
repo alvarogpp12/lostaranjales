@@ -1,65 +1,59 @@
-import { Heart, Sparkles, Users } from 'lucide-react'
-
 const services = [
 	{
-		icon: Heart,
 		title: 'Bodas',
-		description: 'El día más especial de tu vida en un entorno mágico y natural',
 		href: '#bodas',
 	},
 	{
-		icon: Users,
-		title: 'Eventos Corporativos',
-		description: 'Espacios profesionales para tus reuniones y celebraciones empresariales',
+		title: 'Corporativos',
 		href: '#eventos',
 	},
 	{
-		icon: Sparkles,
 		title: 'Celebraciones',
-		description: 'Comuniones, bautizos y eventos sociales en un marco incomparable',
 		href: '#eventos',
+	},
+	{
+		title: 'Vive Doñana',
+		href: '#donana',
 	},
 ]
 
 export function Services() {
 	return (
-		<section className="bg-stone-50 py-24">
-			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<>
+			{/* Sección del Video - Protagonista */}
+			<section className="h-screen overflow-hidden">
+				<video autoPlay loop muted playsInline className="size-full object-cover">
+					<source src="/videos/fondo.mp4" type="video/mp4" />
+				</video>
+			</section>
+
+			{/* Sección de Servicios - Tarjetas */}
+			<section className="bg-white py-24">
 				<div className="mb-16 text-center">
 					<h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
-						Nuestros Servicios
+						Todo tipo de eventos
 					</h2>
 					<p className="mx-auto max-w-2xl text-lg text-gray-600">
 						Cada evento es único y merece una atención excepcional
 					</p>
 				</div>
-
-				<div className="grid gap-8 md:grid-cols-3">
-					{services.map((service) => {
-						const Icon = service.icon
-						return (
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+						{services.map((service) => (
 							<a
 								key={service.title}
 								href={service.href}
 								className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-2xl"
 							>
-								<div className="mb-4 inline-flex rounded-full bg-emerald-100 p-3">
-									<Icon className="size-6 text-emerald-700" />
-								</div>
-								<h3 className="mb-3 font-serif text-2xl font-bold text-gray-900">{service.title}</h3>
-								<p className="text-gray-600">{service.description}</p>
-								<div className="mt-4 inline-flex items-center text-sm font-medium text-emerald-700 transition-all group-hover:translate-x-1">
-									Ver más
-									<svg className="ml-2 size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-									</svg>
-								</div>
+								<h3 className="font-serif text-2xl font-bold text-gray-900 transition-opacity group-hover:opacity-60">
+									{service.title}
+								</h3>
 							</a>
-						)
-					})}
+						))}
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	)
 }
 

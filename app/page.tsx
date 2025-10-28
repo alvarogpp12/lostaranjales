@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
+import { About } from 'components/about'
 import { Contact } from 'components/contact'
+import { Features } from 'components/features'
 import { Gallery } from 'components/gallery'
 import { Hero } from 'components/hero'
 import { Services } from 'components/services'
@@ -20,7 +22,9 @@ export default function Home() {
 		<>
 			<Hero />
 			<Services />
+			<Features />
 			<Gallery />
+			<About />
 			<Contact />
 		</>
 	)

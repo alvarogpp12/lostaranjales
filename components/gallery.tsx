@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const galleryItems = [
 	{
 		id: 1,
@@ -5,6 +7,7 @@ const galleryItems = [
 		category: 'Bodas',
 		color: 'from-rose-500 to-pink-600',
 		size: 'large', // Ocupa 2 columnas
+		image: '/images/bodas.jpg',
 	},
 	{
 		id: 2,
@@ -77,13 +80,19 @@ export function Gallery() {
 								item.size === 'large' ? 'sm:col-span-2' : 'col-span-1'
 							}`}
 						>
-							{/* Placeholder gradient - replace with actual images */}
-							<div
-								className={`size-full bg-gradient-to-br ${item.color} transition-transform duration-700 group-hover:scale-110`}
-							>
-								{/* Replace with: */}
-								{/* <Image src={`/images/gallery/${item.id}.jpg`} alt={item.title} fill className="object-cover" /> */}
-							</div>
+							{/* Imagen real o placeholder gradient */}
+							{item.image ? (
+								<Image
+									src={item.image}
+									alt={item.title}
+									fill
+									className="object-cover transition-transform duration-700 group-hover:scale-110"
+								/>
+							) : (
+								<div
+									className={`size-full bg-gradient-to-br ${item.color} transition-transform duration-700 group-hover:scale-110`}
+								/>
+							)}
 
 							{/* Overlay permanente sutil */}
 							<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent" />

@@ -17,3 +17,21 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+/* 
+  Paleta de colores personalizada - Los Taranjales
+  Verde #21b609
+*/
+@theme {
+  --color-brand-50: #f0fef0;
+  --color-brand-100: #dcfcda;
+  --color-brand-200: #bbf7b9;
+  --color-brand-300: #88ef88;
+  --color-brand-400: #4ddf53;
+  --color-brand-500: #26c72c;
+  --color-brand-600: #21b609;  /* Verde principal Los Taranjales */
+  --color-brand-700: #1a8e0a;
+  --color-brand-800: #19700d;
+  --color-brand-900: #175d0f;
+  --color-brand-950: #073403;
+}

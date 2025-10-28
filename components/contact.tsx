@@ -49,26 +49,26 @@ export function Contact() {
 							<h3 className="mb-6 font-serif text-2xl font-bold text-gray-900">Información de Contacto</h3>
 							<div className="space-y-4">
 								<div className="flex items-start space-x-4">
-									<div className="rounded-full bg-emerald-100 p-3">
-										<Phone className="size-5 text-emerald-700" />
+									<div className="rounded-full bg-gray-100 p-3">
+										<Phone className="size-5 text-gray-900" />
 									</div>
 									<div>
 										<p className="font-medium text-gray-900">Teléfono</p>
-										<a href="tel:+34123456789" className="text-gray-600 hover:text-emerald-700">
+										<a href="tel:+34123456789" className="text-gray-600 hover:text-gray-900">
 											+34 123 456 789
 										</a>
 									</div>
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="rounded-full bg-emerald-100 p-3">
-										<Mail className="size-5 text-emerald-700" />
+									<div className="rounded-full bg-gray-100 p-3">
+										<Mail className="size-5 text-gray-900" />
 									</div>
 									<div>
 										<p className="font-medium text-gray-900">Email</p>
 										<a
 											href="mailto:info@lostaranjales.com"
-											className="text-gray-600 hover:text-emerald-700"
+											className="text-gray-600 hover:text-gray-900"
 										>
 											info@lostaranjales.com
 										</a>
@@ -76,8 +76,8 @@ export function Contact() {
 								</div>
 
 								<div className="flex items-start space-x-4">
-									<div className="rounded-full bg-emerald-100 p-3">
-										<MapPin className="size-5 text-emerald-700" />
+									<div className="rounded-full bg-gray-100 p-3">
+										<MapPin className="size-5 text-gray-900" />
 									</div>
 									<div>
 										<p className="font-medium text-gray-900">Dirección</p>
@@ -91,11 +91,11 @@ export function Contact() {
 							</div>
 						</div>
 
-						<div className="rounded-2xl bg-emerald-700 p-8 text-white">
+						<div className="rounded-2xl bg-gray-900 p-8 text-white">
 							<h4 className="mb-2 font-serif text-xl font-bold">Horario de Atención</h4>
-							<p className="text-emerald-100">Lunes a Viernes: 9:00 - 19:00</p>
-							<p className="text-emerald-100">Sábados: 10:00 - 14:00</p>
-							<p className="mt-4 text-sm text-emerald-200">
+							<p className="text-gray-200">Lunes a Viernes: 9:00 - 19:00</p>
+							<p className="text-gray-200">Sábados: 10:00 - 14:00</p>
+							<p className="mt-4 text-sm text-gray-300">
 								Visitas concertadas disponibles fuera del horario habitual
 							</p>
 						</div>
@@ -114,7 +114,7 @@ export function Contact() {
 								required
 								value={formData.name}
 								onChange={handleChange}
-								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
 							/>
 						</div>
 
@@ -129,7 +129,7 @@ export function Contact() {
 								required
 								value={formData.email}
 								onChange={handleChange}
-								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
 							/>
 						</div>
 
@@ -143,7 +143,7 @@ export function Contact() {
 								name="phone"
 								value={formData.phone}
 								onChange={handleChange}
-								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
 							/>
 						</div>
 
@@ -158,13 +158,13 @@ export function Contact() {
 								rows={4}
 								value={formData.message}
 								onChange={handleChange}
-								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+								className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
 							/>
 						</div>
 
 						<button
 							type="submit"
-							className="w-full rounded-lg bg-emerald-700 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-800 focus:outline-none focus:ring-4 focus:ring-emerald-200"
+							className="w-full rounded-lg bg-gray-900 px-6 py-3 font-medium text-white transition-colors hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200"
 						>
 							Enviar Mensaje
 						</button>
