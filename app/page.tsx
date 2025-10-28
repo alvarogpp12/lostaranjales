@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
+import { Contact } from 'components/contact'
+import { Gallery } from 'components/gallery'
 import { Hero } from 'components/hero'
 import { Services } from 'components/services'
-import { Gallery } from 'components/gallery'
-import { Contact } from 'components/contact'
 
 export const metadata: Metadata = {
 	title: 'Los Taranjales - Finca de Eventos y Celebraciones',

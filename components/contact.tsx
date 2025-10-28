@@ -1,7 +1,7 @@
 'use client'
 
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { useState } from 'react'
-import { Phone, Mail, MapPin } from 'lucide-react'
 
 interface FormData {
 	name: string
