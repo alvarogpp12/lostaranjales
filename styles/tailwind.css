@@ -35,6 +35,6 @@
   --color-brand-900: #175d0f;
   --color-brand-950: #073403;
 
-  /* Tipografía: usar Bodoni Moda para font-serif */
-  --font-serif: var(--font-bodoni), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  /* Tipografía: usar Voga para font-serif (con fallback) */
+  --font-serif: var(--font-voga), ui-serif, Georgia, Cambria, "Times New Roman", serif;
 }
