@@ -4,7 +4,7 @@ import { Navigation } from 'components/navigation'
 import localFont from 'next/font/local'
 
 const voga = localFont({
-	src: '/fonts/voga/Voga-Medium.otf',
+	src: './fonts/voga/Voga-Medium.otf',
 	display: 'swap',
 	variable: '--font-voga',
 })
