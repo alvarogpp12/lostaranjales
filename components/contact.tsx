@@ -36,9 +36,10 @@ export function Contact() {
 		<section id="contacto" className="bg-stone-50 py-24">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="mb-16 text-center">
-					<h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">Contacto</h2>
+					<h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">Contáctenos</h2>
 					<p className="mx-auto max-w-2xl text-lg text-gray-600">
-						Estamos aquí para hacer realidad el evento de tus sueños
+						Regístrese para que nuestro equipo comercial se ponga en contacto con usted para darle una
+						experiencia más personalizada.
 					</p>
 				</div>
 
@@ -54,8 +55,11 @@ export function Contact() {
 									</div>
 									<div>
 										<p className="font-medium text-gray-900">Teléfono</p>
-										<a href="tel:+34123456789" className="text-gray-600 hover:text-gray-900">
-											+34 123 456 789
+										<a href="tel:+34675690515" className="block text-gray-600 hover:text-gray-900">
+											+34 675 690 515
+										</a>
+										<a href="tel:+34649842031" className="block text-gray-600 hover:text-gray-900">
+											+34 649 842 031
 										</a>
 									</div>
 								</div>
@@ -67,10 +71,10 @@ export function Contact() {
 									<div>
 										<p className="font-medium text-gray-900">Email</p>
 										<a
-											href="mailto:info@lostaranjales.com"
+											href="mailto:fincalostaranjales@gmail.com"
 											className="text-gray-600 hover:text-gray-900"
 										>
-											info@lostaranjales.com
+											fincalostaranjales@gmail.com
 										</a>
 									</div>
 								</div>
@@ -82,22 +86,13 @@ export function Contact() {
 									<div>
 										<p className="font-medium text-gray-900">Dirección</p>
 										<p className="text-gray-600">
-											Camino de los Naranjos, 123
+											21750 Almonte
 											<br />
-											28000 Madrid, España
+											Huelva, España
 										</p>
 									</div>
 								</div>
 							</div>
-						</div>
-
-						<div className="rounded-2xl bg-gray-900 p-8 text-white">
-							<h4 className="mb-2 font-serif text-xl font-bold">Horario de Atención</h4>
-							<p className="text-gray-200">Lunes a Viernes: 9:00 - 19:00</p>
-							<p className="text-gray-200">Sábados: 10:00 - 14:00</p>
-							<p className="mt-4 text-sm text-gray-300">
-								Visitas concertadas disponibles fuera del horario habitual
-							</p>
 						</div>
 					</div>
 

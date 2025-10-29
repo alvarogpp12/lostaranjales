@@ -71,7 +71,7 @@ export function Footer() {
 								<Facebook className="size-5" />
 							</a>
 							<a
-								href="mailto:info@lostaranjales.com"
+								href="mailto:fincalostaranjales@gmail.com"
 								className="rounded-full bg-gray-800 p-2 hover:bg-gray-700"
 								aria-label="Email"
 							>
@@ -79,12 +79,16 @@ export function Footer() {
 							</a>
 						</div>
 						<p className="mt-4 text-sm text-gray-400">
-							<a href="tel:+34123456789" className="hover:text-white">
-								+34 123 456 789
+							<a href="tel:+34675690515" className="hover:text-white">
+								+34 675 690 515
 							</a>
 							<br />
-							<a href="mailto:info@lostaranjales.com" className="hover:text-white">
-								info@lostaranjales.com
+							<a href="tel:+34649842031" className="hover:text-white">
+								+34 649 842 031
+							</a>
+							<br />
+							<a href="mailto:fincalostaranjales@gmail.com" className="hover:text-white">
+								fincalostaranjales@gmail.com
 							</a>
 						</p>
 					</div>

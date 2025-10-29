@@ -6,57 +6,120 @@ const galleryItems = [
 		title: 'Ceremonia al Aire Libre',
 		category: 'Bodas',
 		color: 'from-rose-500 to-pink-600',
-		size: 'large', // Ocupa 2 columnas
+		size: 'large',
 		image: '/images/bodas.jpg',
 	},
 	{
 		id: 2,
-		title: 'Salón Principal',
+		title: 'Hermita',
 		category: 'Espacios',
 		color: 'from-amber-500 to-orange-600',
 		size: 'medium',
+		image: '/images/hermita.jpg',
 	},
 	{
 		id: 3,
-		title: 'Jardines',
+		title: 'Evento',
 		category: 'Espacios',
 		color: 'from-emerald-500 to-green-600',
 		size: 'medium',
+		image: '/images/evento1.jpg',
 	},
 	{
 		id: 4,
-		title: 'Eventos Corporativos',
+		title: 'Evento',
 		category: 'Eventos',
 		color: 'from-blue-500 to-indigo-600',
 		size: 'medium',
+		image: '/images/evento2.jpg',
 	},
 	{
 		id: 5,
-		title: 'Cóctel en Terraza',
+		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-purple-500 to-violet-600',
-		size: 'large', // Ocupa 2 columnas
+		size: 'large',
+		image: '/images/gallery1.jpg',
 	},
 	{
 		id: 6,
-		title: 'Recepción Nocturna',
+		title: 'Espacios',
 		category: 'Bodas',
 		color: 'from-slate-700 to-slate-900',
 		size: 'medium',
+		image: '/images/gallery2.jpg',
 	},
 	{
 		id: 7,
-		title: 'Piscina y Zona Chill Out',
+		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-cyan-500 to-blue-600',
 		size: 'medium',
+		image: '/images/gallery3.jpg',
 	},
 	{
 		id: 8,
-		title: 'Capilla',
+		title: 'Espacios',
 		category: 'Bodas',
 		color: 'from-amber-600 to-yellow-700',
 		size: 'medium',
+		image: '/images/gallery4.jpg',
+	},
+	{
+		id: 9,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-rose-500 to-pink-600',
+		size: 'large',
+		image: '/images/gallery5.jpg',
+	},
+	{
+		id: 10,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-amber-500 to-orange-600',
+		size: 'medium',
+		image: '/images/gallery6.jpg',
+	},
+	{
+		id: 11,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-emerald-500 to-green-600',
+		size: 'medium',
+		image: '/images/gallery7.jpg',
+	},
+	{
+		id: 12,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-blue-500 to-indigo-600',
+		size: 'medium',
+		image: '/images/gallery8.jpg',
+	},
+	{
+		id: 13,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-purple-500 to-violet-600',
+		size: 'large',
+		image: '/images/gallery9.jpg',
+	},
+	{
+		id: 14,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-slate-700 to-slate-900',
+		size: 'medium',
+		image: '/images/gallery10.jpg',
+	},
+	{
+		id: 15,
+		title: 'Espacios',
+		category: 'Espacios',
+		color: 'from-cyan-500 to-blue-600',
+		size: 'medium',
+		image: '/images/gallery11.jpg',
 	},
 ]
 
@@ -94,16 +157,8 @@ export function Gallery() {
 								/>
 							)}
 
-							{/* Overlay permanente sutil */}
-							<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent" />
-
-							{/* Caption - Siempre visible en la parte inferior */}
-							<div className="absolute inset-x-0 bottom-0 p-4 text-white transition-all duration-300 group-hover:p-6">
-								<p className="mb-1 text-xs font-medium uppercase tracking-wider opacity-90">
-									{item.category}
-								</p>
-								<h3 className="font-serif text-lg font-bold leading-tight">{item.title}</h3>
-							</div>
+							{/* Overlay sutil solo en hover */}
+							<div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
 						</div>
 					))}
 				</div>
