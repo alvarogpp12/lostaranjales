@@ -146,14 +146,14 @@ export function Gallery() {
     return (
         <section id="espacios" className="relative h-screen w-full bg-black">
             {/* Imagen a pantalla completa */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-black">
                 <Image
                     key={images[index]}
                     src={images[index]}
                     alt={`Foto ${index + 1}`}
                     fill
                     priority
-                    className="object-cover"
+                    className="object-contain"
                 />
             </div>
 
