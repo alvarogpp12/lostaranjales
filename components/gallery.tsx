@@ -30,7 +30,7 @@ const galleryItems = [
 		title: 'Evento',
 		category: 'Eventos',
 		color: 'from-blue-500 to-indigo-600',
-		size: 'medium',
+		size: 'large',
 		image: '/images/evento2.jpg',
 	},
 	{
@@ -38,7 +38,7 @@ const galleryItems = [
 		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-purple-500 to-violet-600',
-		size: 'large',
+		size: 'medium',
 		image: '/images/gallery1.jpg',
 	},
 	{
@@ -54,7 +54,7 @@ const galleryItems = [
 		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-cyan-500 to-blue-600',
-		size: 'medium',
+		size: 'large',
 		image: '/images/gallery3.jpg',
 	},
 	{
@@ -70,7 +70,7 @@ const galleryItems = [
 		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-rose-500 to-pink-600',
-		size: 'large',
+		size: 'medium',
 		image: '/images/gallery5.jpg',
 	},
 	{
@@ -78,7 +78,7 @@ const galleryItems = [
 		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-amber-500 to-orange-600',
-		size: 'medium',
+		size: 'large',
 		image: '/images/gallery6.jpg',
 	},
 	{
@@ -102,7 +102,7 @@ const galleryItems = [
 		title: 'Espacios',
 		category: 'Espacios',
 		color: 'from-purple-500 to-violet-600',
-		size: 'large',
+		size: 'medium',
 		image: '/images/gallery9.jpg',
 	},
 	{
