@@ -1,4 +1,8 @@
+"use client"
+
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const galleryItems = [
 	{
@@ -124,39 +128,69 @@ const galleryItems = [
 ]
 
 export function Gallery() {
-	return (
-		<section id="espacios" className="bg-white py-24">
-			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				{/* Mosaico Grid */}
-				<div className="grid auto-rows-[280px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-					{galleryItems.map((item) => (
-						<div
-							key={item.id}
-							className={`group relative cursor-pointer overflow-hidden rounded-2xl ${
-								item.size === 'large' ? 'sm:col-span-2' : 'col-span-1'
-							}`}
-						>
-							{/* Imagen real o placeholder gradient */}
-							{item.image ? (
-								<Image
-									src={item.image}
-									alt={item.title}
-									fill
-									className="object-cover transition-transform duration-700 group-hover:scale-110"
-								/>
-							) : (
-								<div
-									className={`size-full bg-gradient-to-br ${item.color} transition-transform duration-700 group-hover:scale-110`}
-								/>
-							)}
+    const images = galleryItems.map((g) => g.image).filter(Boolean) as string[]
+    const [index, setIndex] = useState(0)
 
-							{/* Overlay sutil solo en hover */}
-							<div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-	)
+    const goPrev = () => setIndex((i) => (i - 1 + images.length) % images.length)
+    const goNext = () => setIndex((i) => (i + 1) % images.length)
+
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'ArrowLeft') goPrev()
+            if (e.key === 'ArrowRight') goNext()
+        }
+        window.addEventListener('keydown', onKey)
+        return () => window.removeEventListener('keydown', onKey)
+    }, [])
+
+    return (
+        <section id="espacios" className="relative h-screen w-full bg-black">
+            {/* Imagen a pantalla completa */}
+            <div className="absolute inset-0">
+                <Image
+                    key={images[index]}
+                    src={images[index]}
+                    alt={`Foto ${index + 1}`}
+                    fill
+                    priority
+                    className="object-cover"
+                />
+            </div>
+
+            {/* Controles */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-4">
+                <button
+                    onClick={goPrev}
+                    aria-label="Anterior"
+                    className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-white/80 p-3 text-gray-900 backdrop-blur transition-colors hover:bg-white"
+                >
+                    <ChevronLeft className="size-6" />
+                </button>
+                <button
+                    onClick={goNext}
+                    aria-label="Siguiente"
+                    className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-white/80 p-3 text-gray-900 backdrop-blur transition-colors hover:bg-white"
+                >
+                    <ChevronRight className="size-6" />
+                </button>
+            </div>
+
+            {/* Indicadores */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+                <div className="flex gap-2">
+                    {images.map((_, i) => (
+                        <button
+                            key={i}
+                            aria-label={`Ir a la foto ${i + 1}`}
+                            onClick={() => setIndex(i)}
+                            className={`h-1.5 w-6 rounded-full transition-colors ${
+                                i === index ? 'bg-white' : 'bg-white/40'
+                            }`}
+                        />
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
 }
 

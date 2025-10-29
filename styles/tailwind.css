@@ -37,4 +37,6 @@
 
   /* Tipografía: usar Voga para font-serif (con fallback) */
   --font-serif: var(--font-voga), ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  /* Tipografía: usar Outfit para font-sans (subtítulos y cuerpo) */
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
