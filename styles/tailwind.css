@@ -34,4 +34,7 @@
   --color-brand-800: #19700d;
   --color-brand-900: #175d0f;
   --color-brand-950: #073403;
+
+  /* Tipografía: usar Bodoni Moda para font-serif */
+  --font-serif: var(--font-bodoni), ui-serif, Georgia, Cambria, "Times New Roman", serif;
 }
