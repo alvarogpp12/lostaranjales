@@ -127,13 +127,6 @@ export function Gallery() {
 	return (
 		<section id="espacios" className="bg-white py-24">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<div className="mb-16 text-center">
-					<h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">Nuestros Espacios</h2>
-					<p className="mx-auto max-w-2xl text-lg text-gray-600">
-						Descubre los rincones donde cada detalle cuenta una historia
-					</p>
-				</div>
-
 				{/* Mosaico Grid */}
 				<div className="grid auto-rows-[280px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{galleryItems.map((item) => (
