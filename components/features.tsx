@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Maximize2, Users2, Utensils } from 'lucide-react'
 
 const features = [
@@ -19,9 +20,22 @@ const features = [
 ]
 
 export function Features() {
-	return (
-		<section className="bg-stone-50 py-24">
-			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    return (
+        <section className="bg-stone-50 py-24">
+            {/* Imagen 16:9 a ancho completo de la página */}
+            <div className="mx-auto mb-12 max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-white">
+                    <Image
+                        src="/images/fotomesalaguna.jpg"
+                        alt="Los Taranjales - Mesa en la laguna"
+                        fill
+                        className="object-contain"
+                        priority
+                    />
+                </div>
+            </div>
+
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="mb-16 text-center">
 					<h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
 						Características del Espacio

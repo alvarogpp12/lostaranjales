@@ -144,9 +144,9 @@ export function Gallery() {
     }, [])
 
     return (
-        <section id="espacios" className="relative h-screen w-full bg-black">
+        <section id="espacios" className="relative h-screen w-full bg-white">
             {/* Imagen a pantalla completa */}
-            <div className="absolute inset-0 bg-black">
+            <div className="absolute inset-0 bg-white">
                 <Image
                     key={images[index]}
                     src={images[index]}
