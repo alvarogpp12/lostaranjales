@@ -20,12 +20,12 @@ const services = [
 export function Services() {
 	return (
 		<>
-			{/* Sección del Video - Protagonista */}
-			<section className="h-screen overflow-hidden">
-				<video autoPlay loop muted playsInline className="size-full object-cover">
-					<source src="/videos/fondo.mp4" type="video/mp4" />
-				</video>
-			</section>
+		{/* Sección del Video - Protagonista */}
+		<section className="flex h-screen items-center justify-center bg-black">
+			<video autoPlay loop muted playsInline className="h-full w-full object-contain">
+				<source src="/videos/vacas.mp4" type="video/mp4" />
+			</video>
+		</section>
 
 			{/* Sección de Servicios - Tarjetas */}
 			<section className="bg-white py-24">
