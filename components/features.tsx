@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Maximize2, Users2, Utensils } from 'lucide-react'
+import featuresBanner from 'public/images/features-banner.png'
 
 const features = [
 	{
@@ -22,42 +23,40 @@ const features = [
 export function Features() {
     return (
         <section className="bg-stone-50 py-24">
-            {/* Imagen 16:9 a ancho completo de la página */}
-            <div className="mx-auto mb-12 max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-white">
+            {/* Contenedor ancho completo con imagen 16:9 y texto superpuesto */}
+            <div className="mx-auto max-w-none px-0">
+                <div className="relative w-full select-none overflow-hidden">
                     <Image
-                        src="/images/fotomesalaguna.jpg"
+                        src={featuresBanner}
                         alt="Los Taranjales - Mesa en la laguna"
-                        fill
-                        className="object-contain"
+                        className="h-auto w-full select-none pointer-events-none"
                         priority
                     />
+
+                    {/* Overlay de texto en blanco ocupando el ancho */}
+                    <div className="absolute inset-0 flex items-center">
+                        <div className="w-full text-white">
+                            <h2 className="mb-10 text-center font-serif text-4xl font-bold md:text-5xl">
+                                Características del Espacio
+                            </h2>
+
+                            <div className="grid gap-10 md:grid-cols-3">
+                                {features.map((feature) => (
+                                    <div key={feature.stat} className="text-center">
+                                        <h3 className="mb-2 font-serif text-3xl font-bold md:text-4xl">
+                                            {feature.stat}
+                                        </h3>
+                                        <p className="mx-auto max-w-sm text-base md:text-lg">
+                                            {feature.description}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-				<div className="mb-16 text-center">
-					<h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
-						Características del Espacio
-					</h2>
-				</div>
-
-				<div className="grid gap-12 md:grid-cols-3">
-					{features.map((feature) => {
-						const Icon = feature.icon
-						return (
-							<div key={feature.stat} className="text-center">
-								<div className="mb-6 inline-flex">
-									<Icon className="size-12 text-gray-900" strokeWidth={1.5} />
-								</div>
-								<h3 className="mb-3 font-serif text-3xl font-bold text-gray-900">{feature.stat}</h3>
-								<p className="text-lg text-gray-600">{feature.description}</p>
-							</div>
-						)
-					})}
-				</div>
-			</div>
-		</section>
+        </section>
 	)
 }
 

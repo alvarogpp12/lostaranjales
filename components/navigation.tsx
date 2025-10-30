@@ -18,7 +18,7 @@ export function Navigation() {
 	return (
 		<>
 			{/* Logo centrado - Solo visible al inicio (sin scroll) */}
-			<div
+            <div
 				className={`fixed left-1/2 top-1/2 z-40 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ${
 					isScrolled ? 'pointer-events-none opacity-0' : 'opacity-100'
 				}`}
@@ -28,7 +28,7 @@ export function Navigation() {
 					alt="Finca Los Taranjales"
 					width={300}
 					height={300}
-					className="h-auto w-64 drop-shadow-2xl md:w-80 lg:w-96"
+                    className="h-auto w-44 drop-shadow-2xl sm:w-56 md:w-80 lg:w-96"
 					priority
 				/>
 			</div>
@@ -41,11 +41,11 @@ export function Navigation() {
 						: 'pointer-events-none -translate-y-full opacity-0'
 				}`}
 			>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-					<div className="flex h-20 items-center justify-center">
+                <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8">
+                    <div className="flex h-14 items-center justify-center sm:h-16 md:h-20">
 						{/* Logo texto centrado */}
 						<Link href="/" className="flex items-center space-x-2">
-							<span className="font-serif text-2xl font-bold tracking-tight text-gray-900">
+                            <span className="font-serif text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
 								LOS TARANJALES
 							</span>
 						</Link>

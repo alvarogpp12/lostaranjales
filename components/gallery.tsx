@@ -130,6 +130,7 @@ const galleryItems = [
 export function Gallery() {
     const images = galleryItems.map((g) => g.image).filter(Boolean) as string[]
     const [index, setIndex] = useState(0)
+    const [touchStartX, setTouchStartX] = useState<number | null>(null)
 
     const goPrev = () => setIndex((i) => (i - 1 + images.length) % images.length)
     const goNext = () => setIndex((i) => (i + 1) % images.length)
@@ -144,7 +145,19 @@ export function Gallery() {
     }, [])
 
     return (
-        <section id="espacios" className="relative h-screen w-full bg-white">
+        <section
+            id="espacios"
+            className="relative h-screen w-full bg-white"
+            onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
+            onTouchEnd={(e) => {
+                if (touchStartX == null) return
+                const dx = e.changedTouches[0].clientX - touchStartX
+                if (Math.abs(dx) > 40) {
+                    dx > 0 ? goPrev() : goNext()
+                }
+                setTouchStartX(null)
+            }}
+        >
             {/* Imagen a pantalla completa */}
             <div className="absolute inset-0 bg-white">
                 <Image
@@ -158,20 +171,20 @@ export function Gallery() {
             </div>
 
             {/* Controles */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-4">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-2 sm:px-4">
                 <button
                     onClick={goPrev}
                     aria-label="Anterior"
-                    className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-white/80 p-3 text-gray-900 backdrop-blur transition-colors hover:bg-white"
+                    className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-white/90 p-3 text-gray-900 backdrop-blur transition-colors hover:bg-white sm:p-4"
                 >
-                    <ChevronLeft className="size-6" />
+                    <ChevronLeft className="size-7 sm:size-8" />
                 </button>
                 <button
                     onClick={goNext}
                     aria-label="Siguiente"
-                    className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-white/80 p-3 text-gray-900 backdrop-blur transition-colors hover:bg-white"
+                    className="pointer-events-auto inline-flex items-center justify-center rounded-full bg-white/90 p-3 text-gray-900 backdrop-blur transition-colors hover:bg-white sm:p-4"
                 >
-                    <ChevronRight className="size-6" />
+                    <ChevronRight className="size-7 sm:size-8" />
                 </button>
             </div>
 

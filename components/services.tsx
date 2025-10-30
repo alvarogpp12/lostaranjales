@@ -12,8 +12,8 @@ const services = [
 		href: '#eventos',
 	},
 	{
-		title: 'Vive Doñana',
-		href: '#donana',
+		title: 'Rodajes',
+		href: '#rodajes',
 	},
 ]
 
@@ -21,14 +21,14 @@ export function Services() {
 	return (
 		<>
 		{/* Sección del Video - Protagonista */}
-		<section className="relative flex h-screen items-center justify-center bg-black">
+		<section className="relative flex min-h-[60svh] items-center justify-center bg-black md:h-screen">
 			<video autoPlay loop muted playsInline className="h-full w-full object-contain">
 				<source src="/videos/vacas.mp4" type="video/mp4" />
 			</video>
 			{/* Botón de llamada superpuesto */}
 			<a
 				href="tel:+34675690515"
-				className="absolute bottom-6 right-6 rounded-full bg-gray-900 px-5 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200"
+				className="absolute bottom-6 right-6 rounded-full bg-gray-900 px-6 py-3 text-base font-semibold text-white shadow-lg transition-colors hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:px-7 sm:py-3.5"
 				aria-label="Llamar a Los Taranjales"
 			>
 				Llamar ahora
