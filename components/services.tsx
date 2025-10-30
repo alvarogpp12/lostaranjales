@@ -21,8 +21,14 @@ export function Services() {
 	return (
 		<>
 		{/* Sección del Video - Protagonista */}
-		<section className="relative flex min-h-[60svh] items-center justify-center bg-black md:h-screen">
-			<video autoPlay loop muted playsInline className="h-full w-full object-contain">
+		<section className="relative flex h-[100dvh] items-center justify-center bg-black md:h-screen">
+			<video
+				autoPlay
+				loop
+				muted
+				playsInline
+				className="h-full w-full object-cover object-[50%_40%] md:object-contain md:object-center"
+			>
 				<source src="/videos/vacas.mp4" type="video/mp4" />
 			</video>
 			{/* Botón de llamada superpuesto */}

@@ -23,36 +23,71 @@ const features = [
 export function Features() {
     return (
         <section className="bg-stone-50 py-24">
-            {/* Contenedor ancho completo con imagen 16:9 y texto superpuesto */}
-            <div className="mx-auto max-w-none px-0">
+            {/* Móvil: franja + 3 tarjetas superpuestas en columna (icono + stat + descripción) */}
+            <div className="md:hidden">
                 <div className="relative w-full select-none overflow-hidden">
                     <Image
                         src={featuresBanner}
                         alt="Los Taranjales - Mesa en la laguna"
-                        className="h-auto w-full select-none pointer-events-none"
+                        className="h-[28svh] w-full select-none object-contain pointer-events-none"
                         priority
                     />
-
-                    {/* Overlay de texto en blanco ocupando el ancho */}
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="w-full text-white">
-                            <h2 className="mb-10 text-center font-serif text-4xl font-bold md:text-5xl">
-                                Características del Espacio
-                            </h2>
-
-                            <div className="grid gap-10 md:grid-cols-3">
-                                {features.map((feature) => (
-                                    <div key={feature.stat} className="text-center">
-                                        <h3 className="mb-2 font-serif text-3xl font-bold md:text-4xl">
-                                            {feature.stat}
-                                        </h3>
-                                        <p className="mx-auto max-w-sm text-base md:text-lg">
-                                            {feature.description}
-                                        </p>
+                    {/* Título sobre la imagen */}
+                    <div className="pointer-events-none absolute inset-x-0 top-2 flex justify-center">
+                        <h2 className="mx-4 text-center font-serif text-2xl font-bold text-white drop-shadow-md">
+                            Características del Espacio
+                        </h2>
+                    </div>
+                    {/* Tarjetas superpuestas en columna */}
+                    <div className="absolute inset-0 z-10 flex items-center justify-center">
+                        <div className="mx-4 my-3 grid w-full max-w-md gap-3 px-1">
+                            {features.map((feature) => {
+                                const Icon = feature.icon
+                                return (
+                                    <div
+                                        key={feature.stat}
+                                        className="flex items-start gap-3 rounded-xl border border-black/5 bg-white/95 p-4 shadow-lg backdrop-blur-md"
+                                    >
+                                        <Icon className="size-8 flex-shrink-0 text-gray-900" strokeWidth={1.6} />
+                                        <div>
+                                            <h3 className="font-serif text-xl font-bold leading-tight text-gray-900">
+                                                {feature.stat}
+                                            </h3>
+                                            <p className="mt-1 text-sm leading-snug text-gray-700">
+                                                {feature.description}
+                                            </p>
+                                        </div>
                                     </div>
-                                ))}
-                            </div>
+                                )
+                            })}
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Desktop: versión original con grid e iconos negros */}
+            <div className="hidden md:block">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="mb-16 text-center">
+                        <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
+                            Características del Espacio
+                        </h2>
+                    </div>
+                    <div className="grid gap-12 md:grid-cols-3">
+                        {features.map((feature) => {
+                            const Icon = feature.icon
+                            return (
+                                <div key={feature.stat} className="text-center">
+                                    <div className="mb-6 inline-flex">
+                                        <Icon className="size-12 text-gray-900" strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="mb-3 font-serif text-3xl font-bold text-gray-900">
+                                        {feature.stat}
+                                    </h3>
+                                    <p className="text-lg text-gray-600">{feature.description}</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
