@@ -148,12 +148,24 @@ export function Gallery() {
         <section
             id="espacios"
             className="relative h-screen w-full bg-white"
-            onTouchStart={(e) => setTouchStartX(e.touches[0].clientX)}
+            onTouchStart={(e) => {
+                const t = e.touches?.item(0)
+                if (t) setTouchStartX(t.clientX)
+            }}
             onTouchEnd={(e) => {
                 if (touchStartX == null) return
-                const dx = e.changedTouches[0].clientX - touchStartX
+                const touch = e.changedTouches?.item(0) ?? null
+                if (!touch) {
+                    setTouchStartX(null)
+                    return
+                }
+                const dx = touch.clientX - touchStartX
                 if (Math.abs(dx) > 40) {
-                    dx > 0 ? goPrev() : goNext()
+                    if (dx > 0) {
+                        goPrev()
+                    } else {
+                        goNext()
+                    }
                 }
                 setTouchStartX(null)
             }}
@@ -162,7 +174,7 @@ export function Gallery() {
             <div className="absolute inset-0 bg-white">
                 <Image
                     key={images[index]}
-                    src={images[index]}
+                    src={images[index]!}
                     alt={`Foto ${index + 1}`}
                     fill
                     priority

@@ -5,9 +5,6 @@ import { env } from "./env.mjs"
 
 const config: NextConfig = {
   reactStrictMode: true,
-  experimental: {
-    allowedDevOrigins: ["http://192.168.1.47:3000"],
-  },
   logging: {
     fetches: {
       fullUrl: true,

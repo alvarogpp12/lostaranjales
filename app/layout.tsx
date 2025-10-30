@@ -1,7 +1,7 @@
 import 'styles/tailwind.css'
+import localFont from 'next/font/local'
 import { Footer } from 'components/footer'
 import { Navigation } from 'components/navigation'
-import localFont from 'next/font/local'
 
 const boris = localFont({
     src: [

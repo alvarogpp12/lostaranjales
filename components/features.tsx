@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { Maximize2, Users2, Utensils } from 'lucide-react'
+import Image from 'next/image'
 import featuresBanner from 'public/images/features-banner.png'
 
 const features = [
