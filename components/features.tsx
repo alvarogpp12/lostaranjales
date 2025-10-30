@@ -23,44 +23,40 @@ const features = [
 export function Features() {
     return (
         <section className="bg-stone-50 py-24">
-            {/* Móvil: franja + 3 tarjetas superpuestas en columna (icono + stat + descripción) */}
+            {/* Móvil: franja imagen y tarjetas debajo (mismo contenido), sin overlays */}
             <div className="md:hidden">
-                <div className="relative w-full select-none overflow-hidden">
+                <div className="w-full select-none overflow-hidden">
                     <Image
                         src={featuresBanner}
                         alt="Los Taranjales - Mesa en la laguna"
                         className="h-[28svh] w-full select-none object-contain pointer-events-none"
                         priority
                     />
-                    {/* Título sobre la imagen */}
-                    <div className="pointer-events-none absolute inset-x-0 top-2 flex justify-center">
-                        <h2 className="mx-4 text-center font-serif text-2xl font-bold text-white drop-shadow-md">
-                            Características del Espacio
-                        </h2>
-                    </div>
-                    {/* Tarjetas superpuestas en columna */}
-                    <div className="absolute inset-0 z-10 flex items-center justify-center">
-                        <div className="mx-4 my-3 grid w-full max-w-md gap-3 px-1">
-                            {features.map((feature) => {
-                                const Icon = feature.icon
-                                return (
-                                    <div
-                                        key={feature.stat}
-                                        className="flex items-start gap-3 rounded-xl border border-black/5 bg-white/95 p-4 shadow-lg backdrop-blur-md"
-                                    >
-                                        <Icon className="size-8 flex-shrink-0 text-gray-900" strokeWidth={1.6} />
-                                        <div>
-                                            <h3 className="font-serif text-xl font-bold leading-tight text-gray-900">
-                                                {feature.stat}
-                                            </h3>
-                                            <p className="mt-1 text-sm leading-snug text-gray-700">
-                                                {feature.description}
-                                            </p>
-                                        </div>
+                </div>
+                <div className="-mt-10 px-4">
+                    <h2 className="mb-3 text-center font-serif text-2xl font-bold text-gray-900">
+                        Características del Espacio
+                    </h2>
+                    <div className="mx-auto grid w-full max-w-md gap-3">
+                        {features.map((feature) => {
+                            const Icon = feature.icon
+                            return (
+                                <div
+                                    key={feature.stat}
+                                    className="flex items-start gap-3 rounded-xl border border-black/5 bg-white/95 p-4 shadow-lg backdrop-blur-md"
+                                >
+                                    <Icon className="size-8 flex-shrink-0 text-gray-900" strokeWidth={1.6} />
+                                    <div>
+                                        <h3 className="font-serif text-xl font-bold leading-tight text-gray-900">
+                                            {feature.stat}
+                                        </h3>
+                                        <p className="mt-1 text-sm leading-snug text-gray-700">
+                                            {feature.description}
+                                        </p>
                                     </div>
-                                )
-                            })}
-                        </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
