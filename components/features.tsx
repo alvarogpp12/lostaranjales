@@ -39,7 +39,7 @@ export function Features() {
                         </h2>
                     </div>
                 </div>
-                <div className="-mt-10 px-4">
+                <div className="mt-4 px-4">
                     <div className="mx-auto grid w-full max-w-md gap-3">
                         {features.map((feature) => {
                             const Icon = feature.icon
