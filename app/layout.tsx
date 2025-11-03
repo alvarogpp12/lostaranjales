@@ -1,5 +1,6 @@
 import 'styles/tailwind.css'
 import localFont from 'next/font/local'
+import { ViewportLock } from 'components/viewport-lock'
 import { Footer } from 'components/footer'
 import { Navigation } from 'components/navigation'
 
@@ -14,12 +15,13 @@ const boris = localFont({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-        <html lang="es" className={`scroll-smooth ${boris.variable}`}>
+		<html lang="es" className={`scroll-smooth overflow-x-hidden ${boris.variable}`}>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
             </head>
 			<body className="antialiased font-serif overflow-x-hidden overscroll-x-none touch-pan-y">
 				<Navigation />
+				<ViewportLock />
 				<main>{children}</main>
 				<Footer />
 			</body>
