@@ -25,18 +25,21 @@ export function Features() {
         <section className="bg-stone-50 py-24">
             {/* Móvil: franja imagen y tarjetas debajo (mismo contenido), sin overlays */}
             <div className="md:hidden">
-                <div className="w-full select-none overflow-hidden">
+                <div className="relative w-full select-none overflow-hidden">
                     <Image
                         src={featuresBanner}
                         alt="Los Taranjales - Mesa en la laguna"
                         className="h-[28svh] w-full select-none object-contain pointer-events-none"
                         priority
                     />
+                    {/* Título centrado y superpuesto en la foto (blanco) */}
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                        <h2 className="mx-4 text-center font-serif text-2xl font-bold text-white drop-shadow-md">
+                            Características del Espacio
+                        </h2>
+                    </div>
                 </div>
                 <div className="-mt-10 px-4">
-                    <h2 className="mb-3 text-center font-serif text-2xl font-bold text-gray-900">
-                        Características del Espacio
-                    </h2>
                     <div className="mx-auto grid w-full max-w-md gap-3">
                         {features.map((feature) => {
                             const Icon = feature.icon
