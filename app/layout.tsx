@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
             </head>
-			<body className="antialiased font-serif">
+			<body className="antialiased font-serif overflow-x-hidden overscroll-x-none touch-pan-y">
 				<Navigation />
 				<main>{children}</main>
 				<Footer />
