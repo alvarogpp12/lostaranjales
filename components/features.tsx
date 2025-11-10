@@ -66,20 +66,21 @@ export function Features() {
 
             {/* Desktop: igual que móvil pero adaptado (franja con título superpuesto + tarjetas) */}
             <div className="hidden md:block">
-                <div className="w-full select-none overflow-hidden">
-                    <Image
-                        src={featuresBanner}
-                        alt="Los Taranjales - Mesa en la laguna"
-                        className="h-[28svh] w-full select-none object-contain pointer-events-none"
-                        priority
-                    />
-                </div>
-                {/* Título superpuesto en la franja (blanco) */}
-                <div className="pointer-events-none relative -mt-[28svh] h-0">
-                    <div className="absolute inset-0 flex items-start justify-center pt-6">
-                        <h2 className="mx-4 text-center font-serif text-5xl font-bold text-white drop-shadow-md">
-                            Características del Espacio
-                        </h2>
+                {/* Franja a todo el ancho real (full‑bleed) con título superpuesto */}
+                <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen select-none overflow-hidden">
+                    <div className="relative h-[32svh] w-full">
+                        <Image
+                            src={featuresBanner}
+                            alt="Los Taranjales - Mesa en la laguna"
+                            fill
+                            className="pointer-events-none select-none object-contain object-center"
+                            priority
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <h2 className="mx-4 text-center font-serif text-5xl font-bold text-white drop-shadow-md">
+                                Características del Espacio
+                            </h2>
+                        </div>
                     </div>
                 </div>
                 {/* Tarjetas en 3 columnas, mismo contenido que móvil */}
