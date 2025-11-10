@@ -64,9 +64,8 @@ export function Features() {
                 </div>
             </div>
 
-            {/* Desktop: versión original con franja de imagen + grid e iconos negros */}
+            {/* Desktop: igual que móvil pero adaptado (franja con título superpuesto + tarjetas) */}
             <div className="hidden md:block">
-                {/* Franja de imagen sobre el grid */}
                 <div className="w-full select-none overflow-hidden">
                     <Image
                         src={featuresBanner}
@@ -75,24 +74,33 @@ export function Features() {
                         priority
                     />
                 </div>
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="mb-16 text-center">
-                        <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
+                {/* Título superpuesto en la franja (blanco) */}
+                <div className="pointer-events-none relative -mt-[28svh] h-0">
+                    <div className="absolute inset-0 flex items-start justify-center pt-6">
+                        <h2 className="mx-4 text-center font-serif text-5xl font-bold text-white drop-shadow-md">
                             Características del Espacio
                         </h2>
                     </div>
-                    <div className="grid gap-12 md:grid-cols-3">
+                </div>
+                {/* Tarjetas en 3 columnas, mismo contenido que móvil */}
+                <div className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid gap-6 md:grid-cols-3">
                         {features.map((feature) => {
                             const Icon = feature.icon
                             return (
-                                <div key={feature.stat} className="text-center">
-                                    <div className="mb-6 inline-flex">
-                                        <Icon className="size-12 text-gray-900" strokeWidth={1.5} />
+                                <div
+                                    key={feature.stat}
+                                    className="flex items-start gap-3 rounded-xl border border-black/5 bg-white/95 p-5 shadow-lg backdrop-blur-md"
+                                >
+                                    <Icon className="size-8 flex-shrink-0 text-gray-900" strokeWidth={1.6} />
+                                    <div>
+                                        <h3 className="font-serif text-2xl font-bold leading-tight text-gray-900">
+                                            {feature.stat}
+                                        </h3>
+                                        <p className="mt-1 text-base leading-snug text-gray-700">
+                                            {feature.description}
+                                        </p>
                                     </div>
-                                    <h3 className="mb-3 font-serif text-3xl font-bold text-gray-900">
-                                        {feature.stat}
-                                    </h3>
-                                    <p className="text-lg text-gray-600">{feature.description}</p>
                                 </div>
                             )
                         })}
