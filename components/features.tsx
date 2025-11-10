@@ -22,7 +22,7 @@ const features = [
 
 export function Features() {
     return (
-        <section className="bg-stone-50 py-24">
+		<section className="bg-stone-50 pt-6 pb-2 md:py-24">
             {/* Móvil: franja imagen y tarjetas debajo (mismo contenido), sin overlays */}
             <div className="md:hidden">
                 <div className="relative w-full select-none overflow-hidden">
