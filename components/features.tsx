@@ -39,7 +39,7 @@ export function Features() {
                         </h2>
                     </div>
                 </div>
-                <div className="mt-4 px-4">
+                <div className="mt-1 px-4">
                     <div className="mx-auto grid w-full max-w-md gap-3">
                         {features.map((feature) => {
                             const Icon = feature.icon
@@ -64,8 +64,17 @@ export function Features() {
                 </div>
             </div>
 
-            {/* Desktop: versión original con grid e iconos negros */}
+            {/* Desktop: versión original con franja de imagen + grid e iconos negros */}
             <div className="hidden md:block">
+                {/* Franja de imagen sobre el grid */}
+                <div className="w-full select-none overflow-hidden">
+                    <Image
+                        src={featuresBanner}
+                        alt="Los Taranjales - Mesa en la laguna"
+                        className="h-[28svh] w-full select-none object-contain pointer-events-none"
+                        priority
+                    />
+                </div>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-16 text-center">
                         <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
