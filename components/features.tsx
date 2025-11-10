@@ -64,49 +64,44 @@ export function Features() {
                 </div>
             </div>
 
-            {/* Desktop: igual que móvil pero adaptado (franja con título superpuesto + tarjetas) */}
+            {/* Desktop: franja a todo ancho (fotomesalaguna) con título y características superpuestos en blanco */}
             <div className="hidden md:block">
-                {/* Franja a todo el ancho real (full‑bleed) con título superpuesto */}
-                <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen select-none overflow-hidden">
-                    <div className="relative h-[32svh] w-full">
-                        <Image
-                            src={featuresBanner}
-                            alt="Los Taranjales - Mesa en la laguna"
-                            fill
-                            className="pointer-events-none select-none object-contain object-center"
-                            priority
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <h2 className="mx-4 text-center font-serif text-5xl font-bold text-white drop-shadow-md">
-                                Características del Espacio
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-                {/* Tarjetas en 3 columnas, mismo contenido que móvil */}
-                <div className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="grid gap-6 md:grid-cols-3">
-                        {features.map((feature) => {
-                            const Icon = feature.icon
-                            return (
-                                <div
-                                    key={feature.stat}
-                                    className="flex items-start gap-3 rounded-xl border border-black/5 bg-white/95 p-5 shadow-lg backdrop-blur-md"
-                                >
-                                    <Icon className="size-8 flex-shrink-0 text-gray-900" strokeWidth={1.6} />
-                                    <div>
-                                        <h3 className="font-serif text-2xl font-bold leading-tight text-gray-900">
-                                            {feature.stat}
-                                        </h3>
-                                        <p className="mt-1 text-base leading-snug text-gray-700">
-                                            {feature.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
+				{/* Full‑bleed wrapper para ocupar el ancho completo del viewport */}
+				<div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] w-screen select-none overflow-hidden">
+					<div className="relative w-full md:h-[48vh] lg:h-[56vh]">
+						<Image
+							src="/images/fotomesalaguna.jpg"
+							alt="Los Taranjales - Mesa en la laguna"
+							fill
+							className="pointer-events-none select-none object-cover object-center"
+							priority
+						/>
+						{/* Overlay: título + características en blanco */}
+						<div className="absolute inset-0 bg-black/0">
+							<div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-center px-6">
+								<h2 className="mb-8 text-center font-serif text-5xl font-bold text-white drop-shadow-md">
+									Características del Espacio
+								</h2>
+								<div className="grid gap-8 md:grid-cols-3">
+									{features.map((feature) => {
+										const Icon = feature.icon
+										return (
+											<div key={feature.stat} className="text-center md:text-left">
+												<div className="mb-3 inline-flex">
+													<Icon className="size-10 text-white" strokeWidth={1.6} />
+												</div>
+												<h3 className="mb-1 font-serif text-3xl font-bold text-white">
+													{feature.stat}
+												</h3>
+												<p className="text-lg text-white/90">{feature.description}</p>
+											</div>
+										)
+									})}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
         </section>
 	)
