@@ -1,21 +1,4 @@
-const services = [
-	{
-		title: 'Bodas',
-		href: '#bodas',
-	},
-	{
-		title: 'Corporativos',
-		href: '#eventos',
-	},
-	{
-		title: 'Celebraciones',
-		href: '#eventos',
-	},
-	{
-		title: 'Rodajes',
-		href: '#rodajes',
-	},
-]
+import { ServicesGrid } from './services-grid'
 
 export function Services() {
 	return (
@@ -51,21 +34,7 @@ export function Services() {
 						Cada evento es único y merece una atención excepcional
 					</p>
 				</div>
-				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-					<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-						{services.map((service) => (
-							<a
-								key={service.title}
-								href={service.href}
-								className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-2xl"
-							>
-								<h3 className="font-serif text-2xl font-bold text-gray-900 transition-opacity group-hover:opacity-60">
-									{service.title}
-								</h3>
-							</a>
-						))}
-					</div>
-				</div>
+				<ServicesGrid />
 			</section>
 		</>
 	)
